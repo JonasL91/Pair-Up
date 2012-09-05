@@ -9,7 +9,7 @@
         <ListView ItemsSource="{Binding Players}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Voornaam">
+                    <GridViewColumn Header="Voornaam" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding FirstName}"/>

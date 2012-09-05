@@ -195,10 +195,6 @@
       <Project>{FB01E019-5B07-451E-9F5B-23A4D44D8A91}</Project>
       <Name>Resources</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UserControls\UserControls.csproj">
-      <Project>{5021516F-C92A-4400-91E8-C563CA41EF68}</Project>
-      <Name>UserControls</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

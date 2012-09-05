@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
 using Models.Domain;
 using log4net;
 
@@ -67,6 +68,11 @@ namespace PairUp.ViewModels
                     Log.Debug("User chose this out of the combobox: "+value);
                     Game.Result = GuiResultToModelResult(value);
                     RaisePropertyChanged("Result");
+                    RaisePropertyChanged("DateOfResult");
+                    //I don't know if this is the right approach. Let's situate the problem first.
+                    //If we set the result, the points for each players got changed too. But the ui does not know that has been changed, so it doesn't update.
+                    //So I have to trigger it manually by sending a message.
+                    Messenger.Default.Send(new NotificationMessage(this, "Result"));
                 }
             }
         }

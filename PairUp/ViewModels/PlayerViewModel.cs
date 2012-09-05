@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows;
 using GalaSoft.MvvmLight;
 using System.ComponentModel;
+using GalaSoft.MvvmLight.Messaging;
 using Models.Domain;
 using log4net;
 
@@ -69,6 +70,8 @@ namespace PairUp.ViewModels
             }
         }
 
+
+        
         public double Points
         {
             get { return Player.Points; }
@@ -113,12 +116,19 @@ namespace PairUp.ViewModels
         {
             
             this.Player = new Player();
+            Messenger.Default.Register<NotificationMessage>(this, NotificationMessageReceived);
         }
 
 
         public PlayerViewModel(Player player)
         {
             this.Player = player;
+            Messenger.Default.Register<NotificationMessage>(this, NotificationMessageReceived);
+        }
+
+        private void NotificationMessageReceived(NotificationMessage obj)
+        {
+            RaisePropertyChanged("Points");
         }
 
         #endregion

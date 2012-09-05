@@ -21,7 +21,7 @@ namespace Models.Domain
             set
             {
                 //A player can't have less then 0 points.
-                if (_points + value > 0)
+                if (_points + value >= 0)
                 {
                     _points += value;
                 }

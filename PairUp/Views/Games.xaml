@@ -12,21 +12,21 @@
                     <GridViewColumn Header="Wit">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=WhitePlayer.FirstName}"/>
+                                <TextBlock Text="{Binding Path=WhitePlayer.FullName}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Zwart">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=BlackPlayer.FirstName}"/>
+                                <TextBlock Text="{Binding Path=BlackPlayer.FullName}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Uitslag">
+                    <GridViewColumn Header="Uitslag" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <ComboBox SelectedValue="{Binding Result}" SelectedValuePath="Content">
+                                <ComboBox SelectedValue="{Binding Result, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content">
                                     <ComboBoxItem Content="1-0" />
                                     <ComboBoxItem Content="½-½" />
                                     <ComboBoxItem Content="0-1" />
