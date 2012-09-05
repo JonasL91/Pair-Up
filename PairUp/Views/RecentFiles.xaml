@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="PairUp.Views.RecentTournaments"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+            <Button Content="Nieuw toernooi starten" Command="{Binding StartNewTournamentCommand}"/>
+            <Button Content="Open toernooi" Command="{Binding LoadTournamentCommand}"/>
+        </StackPanel>
+        
+        <GroupBox Header="Recent Files" >
+            <ListView ItemsSource="{Binding RecentFiles}" SelectedItem="{Binding SelectedFile}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </GroupBox>
+       
+    </DockPanel>
+   
+    
+</UserControl>

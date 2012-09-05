@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="PairUp.Views.MainMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>
+
+    <Menu HorizontalAlignment="Left" VerticalAlignment="Top">
+        <MenuItem Header="_Bestand">
+            <MenuItem Header="_Nieuw toernooi"/>
+            <Separator />
+            <MenuItem Header="_Open toernooi..." />
+            <Separator />
+            <MenuItem Header="_Opslaan" />
+            <MenuItem Header="_Opslaan als..." InputGestureText="Ctrl+S" Command="{Binding SaveAsCommand}" >
+                <MenuItem.Icon>
+                    <Image Source="pack://application:,,,/PairUpResources;component/images/save_as.png "/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator />
+            <MenuItem Header="_Afsluiten" />
+        </MenuItem>
+    </Menu>
+
+</UserControl>
