@@ -77,7 +77,7 @@ namespace PairUp.ViewModels
             Log.Debug("Loading tournament...");
             TournamentRepository tournamentRepository = new TournamentRepository();
             //TODO better approach possible? Binding directly to the filepath. Or does the selected item needs to be a whole "RecentFileViewModel".
-            //For example if we want to show information or w/e when selected... (just an example)
+            //For example if we want to show information or w/e when selected one... (just an example)
             Tournament tournament = tournamentRepository.LoadTournamentFromXML(SelectedFile.RecentFile.Filepath);
             var tournamentViewModel = new TournamentViewModel(tournament);
             Messenger.Default.Send(new NotificationMessage<ViewModelBase>(this, tournamentViewModel, "CurrentContent"));

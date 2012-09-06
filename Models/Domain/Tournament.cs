@@ -71,33 +71,41 @@ namespace Models.Domain
                                                                  orderby p.Points descending 
                                                                  select p).ToList();
            Collection<Game> pairings = new Collection<Game>();
-           do
+           PairUp(pairings, playersToBePaired);
+           foreach (Game game in pairings)
            {
-               Player currentPlayer = playersToBePaired.First();
-               for (int i = 1; i < playersToBePaired.Count(); i++)
-               {
-                   //Potential player is the player at position i. Which is first the player above. 
-                   //If they can't play against each other we will try with a player more above. And so on
-                   Player potentialOpponent = playersToBePaired.ElementAt(i);
-                   if(CanPlayAgainstPlayer(currentPlayer, potentialOpponent))
-                   {
-                       Player[] p = DeterminePlayerColor(currentPlayer, potentialOpponent);
-                       Game game = new Game(p[0], p[1]);
-                       pairings.Add(game);
-                       playersToBePaired.Remove(currentPlayer);
-                       playersToBePaired.Remove(potentialOpponent);
-                       //exit the loop and goes to the while check.
-                       break;
-                   }
-               }
-               
+               Games.Add(game);
+           }
+           
+        }
 
-           } while (playersToBePaired.Count() > 2 );
-            foreach(Game game  in pairings)
+        public void PairUp(Collection<Game> pairings, List<Player> playersToBePaired)
+        {
+            Boolean succes = false;
+            if(playersToBePaired.Count != 0)
             {
-                Games.Add(game);
+                Player worstInRank = playersToBePaired.First();
+                foreach (Player currentPlayer in playersToBePaired)
+                {
+                    if (CanPlayAgainstPlayer(worstInRank, currentPlayer))
+                    {
+                        Player[] p = DeterminePlayerColor(worstInRank, currentPlayer);
+                        Game game = new Game(p[0], p[1]);
+                        pairings.Add(game);
+                        playersToBePaired.Remove(worstInRank);
+                        playersToBePaired.Remove(currentPlayer);
+                        succes = true;
+                        break;
+                    }
+                }
             }
            
+            if(succes)
+            {
+                PairUp(pairings, playersToBePaired);
+            }
+           
+            
         }
         #endregion
 
@@ -136,7 +144,7 @@ namespace Models.Domain
             
             //The last check is too see if the players played already against each other
             if (((worstInRank.CurrentRank - betterInRank.CurrentRank) < MaxPositionsRemovedFromOtherPlayer) &&
-                worstInRank.CalculateDifferencePlayedAgainstPlayer(betterInRank) > LastTimePlayedAgainstOtherPlayer)
+                worstInRank.CalculateDifferencePlayedAgainstPlayer(betterInRank) > LastTimePlayedAgainstOtherPlayer && worstInRank!=betterInRank)
             {
                 return true;
             }
