@@ -49,7 +49,7 @@ namespace Models.Helpers
                     }
                     //if the file does not exists anymore we must delete the registery key.
                     else
-                    {
+                    {   
                         RemoveFile(path);
                     }    
                 }

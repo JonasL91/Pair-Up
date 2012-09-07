@@ -98,7 +98,13 @@ namespace Models.Domain
                         break;
                     }
                 }
+                if (!succes)
+                {
+                    playersToBePaired.Remove(worstInRank);
+                    succes = true;
+                }
             }
+            
            
             if(succes)
             {

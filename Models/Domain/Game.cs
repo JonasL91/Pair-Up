@@ -57,8 +57,9 @@ namespace Models.Domain
             this.BlackPlayer = bPlayer;
             //When a new game has been created, we set it immediatly to 'IsInProgress'
             IsInProgress = true;
-            WhitePlayer.Games.Add(this);
-            BlackPlayer.Games.Add(this);
+            //TODO
+           // WhitePlayer.Games.Add(this);
+            //BlackPlayer.Games.Add(this);
             
         }
 
