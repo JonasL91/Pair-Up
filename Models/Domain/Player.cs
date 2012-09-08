@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 using log4net;
 
 namespace Models.Domain
@@ -31,7 +32,9 @@ namespace Models.Domain
         public int CurrentRank { get; set; }
         public int WhiteBlackBalance { get; set; }
         //Currently the games are sorted always by date of result. This could be changed later on.
+        [NonSerialized]
         private List<Game> _games;
+        [XmlIgnore]
         public List<Game> Games 
         { 
             get 
