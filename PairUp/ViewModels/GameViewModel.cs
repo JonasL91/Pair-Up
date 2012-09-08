@@ -77,10 +77,25 @@ namespace PairUp.ViewModels
             }
         }
 
-        public DateTime DateOfResult
+        public string DateOfResult
         {
-            get { return Game.DateOfResult; }
+            get { return Game.DateOfResult.ToShortTimeString(); }
         }
+
+        private int _roundNumber;
+        public int RoundNumber
+        {
+            get { return Game.RoundNumber; }
+            set
+            {
+                if(value!=_roundNumber)
+                {
+                    _roundNumber = value;
+                    RaisePropertyChanged("RoundNumber");
+                }
+            }
+        }
+
         #endregion
         #region Constructors
         public GameViewModel(Game game)
