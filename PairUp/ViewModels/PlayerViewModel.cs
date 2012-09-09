@@ -87,7 +87,10 @@ namespace PairUp.ViewModels
 
         public int GamesPlayed
         {
-            get { return Player.Games.Count; }
+            get
+            { 
+                return Player.GamesPlayed;
+            }
         }
 
         public bool IsReadyToPlay

@@ -59,6 +59,8 @@ namespace Models.Domain
             set { _lastName = value.Trim(); }
         }
 
+        public int GamesPlayed { get; set; }
+
         //Should be moved to viewModel
         public string FullName
         {

@@ -30,6 +30,11 @@ namespace Models.Domain
                 {
                     RemovePointsFromPlayers((int)_result);
                 }
+                if(IsInProgress)
+                {
+                    WhitePlayer.GamesPlayed++;
+                    BlackPlayer.GamesPlayed++;
+                }
                 
                 AddPointsToPlayers((int) value);
                 

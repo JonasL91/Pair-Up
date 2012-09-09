@@ -15,7 +15,7 @@ namespace Models.Domain
         private static readonly ILog log = LogManager.GetLogger(typeof (Tournament));
         // Variables used by the PairUp method this can be changed later on.
         private const int LastTimePlayedAgainstOtherPlayer = 5;
-        private const int MaxPositionsRemovedFromOtherPlayer = 5;
+        private const int MaxPositionsRemovedFromOtherPlayer = 2;
         #endregion
         #region Properties
         public string Name { get; set; }
@@ -84,7 +84,7 @@ namespace Models.Domain
             Boolean succes = false;
             if(playersToBePaired.Count != 0)
             {
-                Player worstInRank = playersToBePaired.First();
+                Player worstInRank = playersToBePaired.Last();
                 foreach (Player currentPlayer in playersToBePaired)
                 {
                     if (CanPlayAgainstPlayer(worstInRank, currentPlayer))
@@ -147,10 +147,11 @@ namespace Models.Domain
         //TODO Move method to Models/Player
         private bool CanPlayAgainstPlayer(Player worstInRank, Player betterInRank)
         {
+            List<Player> players = Players.OrderByDescending(player => player.Points).ToList();
             
             //The last check is too see if the players played already against each other
-            if (((worstInRank.CurrentRank - betterInRank.CurrentRank) < MaxPositionsRemovedFromOtherPlayer) &&
-                worstInRank.CalculateDifferencePlayedAgainstPlayer(betterInRank) > LastTimePlayedAgainstOtherPlayer && worstInRank!=betterInRank)
+            if (((players.IndexOf(worstInRank) - players.IndexOf(betterInRank)) < MaxPositionsRemovedFromOtherPlayer) &&
+                worstInRank.CalculateDifferencePlayedAgainstPlayer(betterInRank) > LastTimePlayedAgainstOtherPlayer && worstInRank != betterInRank)
             {
                 return true;
             }
