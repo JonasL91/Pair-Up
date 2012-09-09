@@ -102,20 +102,7 @@ namespace ModelsTest
             Assert.Inconclusive("Verify the correctness of this test method.");
         }
 
-        /// <summary>
-        ///A test for CurrentRank
-        ///</summary>
-        [TestMethod()]
-        public void CurrentRankTest()
-        {
-            Player target = new Player(); // TODO: Initialize to an appropriate value
-            int expected = 0; // TODO: Initialize to an appropriate value
-            int actual;
-            target.CurrentRank = expected;
-            actual = target.CurrentRank;
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
-        }
+      
 
         /// <summary>
         ///A test for FirstName

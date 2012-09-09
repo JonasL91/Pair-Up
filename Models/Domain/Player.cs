@@ -29,7 +29,6 @@ namespace Models.Domain
             }
         }
 
-        public int CurrentRank { get; set; }
         public int WhiteBlackBalance { get; set; }
         //Currently the games are sorted always by date of result. This could be changed later on.
         [NonSerialized]

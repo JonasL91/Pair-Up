@@ -179,7 +179,8 @@ namespace Models.Domain
             }
             if(playerA.WhiteBlackBalance == playerB.WhiteBlackBalance)
             {
-                if (playerA.CurrentRank < playerB.CurrentRank)
+                List<Player> playersSorted = Players.OrderByDescending(player => player.Points).ToList();
+                if (playersSorted.IndexOf(playerB) < playersSorted.IndexOf(playerA))
                 {
                     players[0] = playerA;
                     players[1] = playerB;
