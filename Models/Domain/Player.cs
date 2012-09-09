@@ -59,6 +59,7 @@ namespace Models.Domain
             set { _lastName = value.Trim(); }
         }
 
+        //Should be moved to viewModel
         public string FullName
         {
             get

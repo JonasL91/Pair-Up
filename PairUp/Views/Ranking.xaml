@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" >
     <GroupBox Header="Rangschikking">
-        <ListView ItemsSource="{Binding Players}">
+        <ListView ItemsSource="{Binding PlayersRanked}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Voornaam" >

@@ -58,6 +58,8 @@ namespace Models.Domain
             //When a new game has been created, we set it immediatly to 'IsInProgress'
             IsInProgress = true;
             WhitePlayer.Games.Add(this);
+            WhitePlayer.WhiteBlackBalance =+ 1;
+            BlackPlayer.WhiteBlackBalance = -1;
             BlackPlayer.Games.Add(this);
             
         }

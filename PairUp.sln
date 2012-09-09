@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PairUpInstall", "PairUpInstall\PairUpInstall.vdproj", "{D7C7692D-BD36-42AE-93EF-61AC2E15196A}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PairUpInstall", "PairUpInstall\PairUpInstall.vdproj", "{013E3939-254D-4254-BCD1-43570B684B0D}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -71,12 +71,12 @@ Global
 		{E992200B-987F-4401-8F31-647DC3B9062C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E992200B-987F-4401-8F31-647DC3B9062C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E992200B-987F-4401-8F31-647DC3B9062C}.Release|x86.ActiveCfg = Release|Any CPU
-		{D7C7692D-BD36-42AE-93EF-61AC2E15196A}.Debug|Any CPU.ActiveCfg = Debug
-		{D7C7692D-BD36-42AE-93EF-61AC2E15196A}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{D7C7692D-BD36-42AE-93EF-61AC2E15196A}.Debug|x86.ActiveCfg = Debug
-		{D7C7692D-BD36-42AE-93EF-61AC2E15196A}.Release|Any CPU.ActiveCfg = Release
-		{D7C7692D-BD36-42AE-93EF-61AC2E15196A}.Release|Mixed Platforms.ActiveCfg = Release
-		{D7C7692D-BD36-42AE-93EF-61AC2E15196A}.Release|x86.ActiveCfg = Release
+		{013E3939-254D-4254-BCD1-43570B684B0D}.Debug|Any CPU.ActiveCfg = Debug
+		{013E3939-254D-4254-BCD1-43570B684B0D}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{013E3939-254D-4254-BCD1-43570B684B0D}.Debug|x86.ActiveCfg = Debug
+		{013E3939-254D-4254-BCD1-43570B684B0D}.Release|Any CPU.ActiveCfg = Release
+		{013E3939-254D-4254-BCD1-43570B684B0D}.Release|Mixed Platforms.ActiveCfg = Release
+		{013E3939-254D-4254-BCD1-43570B684B0D}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

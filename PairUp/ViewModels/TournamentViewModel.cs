@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Win32;
 using Models.Domain;
 using Models.Repositories;
@@ -40,6 +41,13 @@ namespace PairUp.ViewModels
                 }
             }
         }
+
+        public ObservableCollection<PlayerViewModel> PlayersRanked
+        {
+            get { return new ObservableCollection<PlayerViewModel>(this._players.OrderByDescending(playerViewModel => playerViewModel.Points)); }
+        }
+
+
         private ObservableCollection<GameViewModel> _games;
         public ObservableCollection<GameViewModel> Games
         {
@@ -87,6 +95,7 @@ namespace PairUp.ViewModels
 
             Players = new ObservableCollection<PlayerViewModel>();
             Games = new ObservableCollection<GameViewModel>();
+            Messenger.Default.Register<NotificationMessage>(this, NotificationMessageReceived);
             InitCommands();
 
         }
@@ -171,9 +180,9 @@ namespace PairUp.ViewModels
             foreach (Game game in CurrentTournament.Games)
             {
                 GameViewModel gameViewModel = new GameViewModel(game);
-                Games.Add(gameViewModel);
-                
+                Games.Add(gameViewModel);             
             }
+            RaisePropertyChanged("PlayersRanked");
         }
 
         private void AddNewPlayers()
@@ -219,6 +228,14 @@ namespace PairUp.ViewModels
         }
 
         #endregion
+        /// <summary>
+        /// Currently only used when a result gets changed, the rank table needs to get updated.
+        /// </summary>
+        /// <param name="obj"></param>
+        private void NotificationMessageReceived(NotificationMessage obj)
+        {
+            RaisePropertyChanged("PlayersRanked");
+        }
 
 
     }
