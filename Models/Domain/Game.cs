@@ -10,6 +10,15 @@ namespace Models.Domain
     public class Game 
     {
 
+        public enum ResultEnum
+        {
+            NotPlayed = -1,
+            Default = 0,
+            WhiteWins = 1,
+            Draw = 2,
+            BlackWins = 3,
+        }
+
         #region Static fields
         private static readonly ILog Log = LogManager.GetLogger(typeof(Game));
         #endregion
@@ -17,7 +26,7 @@ namespace Models.Domain
         public Player WhitePlayer { get; set; }
         public Player BlackPlayer { get; set; }
 
-        ///-1 = not played, 0 = draw, 1 = white wins, 2 = black wins 
+        ///-1 = not played, 0 = default (empty), 1 = white wins, 2 = black wins 
         private double _result;
         public double Result
         {
@@ -79,16 +88,16 @@ namespace Models.Domain
             Log.Debug("Removing "+result+" points");
             switch (result)
             {
-                case 0:
+                case (int) ResultEnum.Draw:
                     WhitePlayer.Points = -0.5;
                     BlackPlayer.Points = -0.5;
                     Log.Debug("Removed 0.5 points for both players.");
                     break;
-                case 1:
+                case (int) ResultEnum.WhiteWins:
                     WhitePlayer.Points = -1;
                     Log.Debug("Removed 1 point for: "+WhitePlayer.FirstName);
                     break;
-                case 2:
+                case (int) ResultEnum.BlackWins:
                     BlackPlayer.Points = -1;
                     Log.Debug("Removed 1 point for: " + BlackPlayer.FirstName);
                     break;
@@ -108,16 +117,16 @@ namespace Models.Domain
             Log.Debug("Adding " + result + " points");
             switch (result)
             {
-                case 0:
+                case (int) ResultEnum.Draw:
                     WhitePlayer.Points = +0.5;
                     BlackPlayer.Points = +0.5;
                     Log.Debug("Added 0.5 points for both players.");
                     break;
-                case 1:
+                case (int) ResultEnum.WhiteWins:
                     WhitePlayer.Points = +1;
                     Log.Debug("Added 1 point for: " + WhitePlayer.FirstName);
                     break;
-                case 2:
+                case (int) ResultEnum.BlackWins:
                     BlackPlayer.Points = +1;
                     Log.Debug("Added 1 point for: " + BlackPlayer.FirstName);
                     break;

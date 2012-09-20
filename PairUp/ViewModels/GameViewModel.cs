@@ -60,7 +60,10 @@ namespace PairUp.ViewModels
 
         public string Result
         {
-            get { return ModelResultToGui(Game.Result); }
+            get
+            {
+                return ModelResultToGui(Game.Result);
+            }
             set
             {
                 if(!Game.Result.Equals(value))
@@ -112,33 +115,37 @@ namespace PairUp.ViewModels
         {
             if (result.Equals("½-½"))
             {
-                return 0;
+                return (int) Game.ResultEnum.Draw;
             }
             if(result.Equals("1-0"))
             {
-                return 1;
+                return (int) Game.ResultEnum.WhiteWins;
             }
             if (result.Equals("0-1"))
             {
-                return 2;
+                return (int) Game.ResultEnum.BlackWins;
             }
-            else return -1;
+            else return (int) Game.ResultEnum.NotPlayed;
             
         }
 
         private string ModelResultToGui(double result)
         {
-            if(result.Equals(0))
+            if (result.Equals((int)Game.ResultEnum.Draw))
             {
                 return "½-½";
             }
-            if(result.Equals(1))
+            if (result.Equals((int)Game.ResultEnum.WhiteWins))
             {
                 return "1-0";
             }
-            if (result.Equals(2))
+            if (result.Equals((int)Game.ResultEnum.BlackWins))
             {
                 return "0-1";
+            }
+            if (result.Equals((int)Game.ResultEnum.NotPlayed))
+            {
+                return "Niet gespeeld";
             }
             else return "";
         }
