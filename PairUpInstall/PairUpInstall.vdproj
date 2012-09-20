@@ -27,8 +27,26 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_32B4225B4BFA95B2FA993138CB936CBE"
+        "OwnerKey" = "8:_999DA37971604D2D882A94E0822818DF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_999DA37971604D2D882A94E0822818DF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9BE77F6C9B67ED13EFD0417E4E830017"
         "OwnerKey" = "8:_32B4225B4BFA95B2FA993138CB936CBE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9BE77F6C9B67ED13EFD0417E4E830017"
+        "OwnerKey" = "8:_999DA37971604D2D882A94E0822818DF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -69,6 +87,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D157286AAFF45E168984EBBAD8DDF6A6"
+        "OwnerKey" = "8:_999DA37971604D2D882A94E0822818DF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DF678C9FB6AF458B6707586428F2110F"
         "OwnerKey" = "8:_BAB30981989B8EAA9CC7469799C6AD6F"
         "MsmSig" = "8:_UNDEFINED"
@@ -82,25 +106,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9BE77F6C9B67ED13EFD0417E4E830017"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9FF181EB9CB2C17BB346414F7B7556C4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_32B4225B4BFA95B2FA993138CB936CBE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_01C83F97054145439DB1AC0B018CF2CF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_999DA37971604D2D882A94E0822818DF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -127,6 +139,24 @@
         "OwnerKey" = "8:_D157286AAFF45E168984EBBAD8DDF6A6"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9FF181EB9CB2C17BB346414F7B7556C4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_32B4225B4BFA95B2FA993138CB936CBE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9BE77F6C9B67ED13EFD0417E4E830017"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -145,6 +175,27 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -161,6 +212,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -219,6 +278,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_999DA37971604D2D882A94E0822818DF"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:PairUp, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_999DA37971604D2D882A94E0822818DF"
+                    {
+                    "Name" = "8:PairUp.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:C:\\Program Files\\PairUp\\PairUp\\PairUp.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A167807BF0124AE4993A2998D0B3F7F3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9BE77F6C9B67ED13EFD0417E4E830017"
@@ -433,6 +523,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_6C450B75466A40C08745136F47FB8B1E"
+                    {
+                    "Name" = "8:PairUp"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_6EB64F5C74CA458BB9A7721F94AE0B25"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_A167807BF0124AE4993A2998D0B3F7F3"
@@ -464,7 +565,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PairUp"
         "ProductCode" = "8:{600D25BF-AB0B-4F64-8BA9-EE02AEF1E969}"
-        "PackageCode" = "8:{7ED51D01-67F5-42FA-A004-7D923F140E11}"
+        "PackageCode" = "8:{689E1C8B-311E-40E7-867F-460A60863947}"
         "UpgradeCode" = "8:{A51D94DE-D9F6-4CF1-A089-AB19B5EB8E38}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -584,21 +685,35 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8E30F3AFDF4344A0BFB26129311920B3"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_57574A5918404D5FAA2F0B826A971498"
             {
-            "Name" = "8:PairUp"
+            "Name" = "8:PairUp.exe"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_01C83F97054145439DB1AC0B018CF2CF"
-            "Folder" = "8:_1768C4E658714FBABE5D551B96D36256"
+            "Target" = "8:_999DA37971604D2D882A94E0822818DF"
+            "Folder" = "8:_A167807BF0124AE4993A2998D0B3F7F3"
             "WorkingFolder" = "8:_A167807BF0124AE4993A2998D0B3F7F3"
             "Icon" = "8:"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A4BE5BFC285E44FE8AF0A57E2066BED2"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7010CA4BAF584676968BBF0179FF80AD"
+            {
+            "Name" = "8:PairUp.exe"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_999DA37971604D2D882A94E0822818DF"
+            "Folder" = "8:_6C450B75466A40C08745136F47FB8B1E"
+            "WorkingFolder" = "8:_A167807BF0124AE4993A2998D0B3F7F3"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_86CB158545F04607ABFF704146E80479"
             {
             "Name" = "8:PairUp"
             "Arguments" = "8:"
@@ -606,8 +721,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_01C83F97054145439DB1AC0B018CF2CF"
-            "Folder" = "8:_17EA6DD382024BA5B3BF08A2920BFB15"
+            "Target" = "8:_999DA37971604D2D882A94E0822818DF"
+            "Folder" = "8:_1768C4E658714FBABE5D551B96D36256"
             "WorkingFolder" = "8:_A167807BF0124AE4993A2998D0B3F7F3"
             "Icon" = "8:"
             "Feature" = "8:"

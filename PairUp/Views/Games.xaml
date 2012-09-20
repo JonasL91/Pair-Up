@@ -26,10 +26,11 @@
                     <GridViewColumn Header="Uitslag" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <ComboBox SelectedValue="{Binding Result, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content">
+                                <ComboBox Text="" IsEditable="False" IsReadOnly="True" SelectedValue="{Binding Result, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content">
                                     <ComboBoxItem Content="1-0" />
                                     <ComboBoxItem Content="½-½" />
                                     <ComboBoxItem Content="0-1" />
+                                    <ComboBoxItem Content="Niet gespeeld"/>
                                 </ComboBox>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
