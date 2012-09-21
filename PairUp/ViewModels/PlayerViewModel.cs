@@ -132,6 +132,7 @@ namespace PairUp.ViewModels
         private void NotificationMessageReceived(NotificationMessage obj)
         {
             RaisePropertyChanged("Points");
+            RaisePropertyChanged("IsReadyToPlay");
         }
 
         #endregion

@@ -30,7 +30,7 @@ namespace Models.Domain
             } 
             set { _players = value; }
         }
-        public Collection<Game> Games { get; set; } 
+        public List<Game> Games { get; set; } 
         private readonly DateTime _date;
         #endregion
         #region Constructor
@@ -40,7 +40,7 @@ namespace Models.Domain
             this._date = DateTime.Now;
             Players = new List<Player>();
             log.Debug("New Tournament Created with date: " + _date);
-            Games = new Collection<Game>();
+            Games = new List<Game>();
         }
         #endregion
         #region Public Methods
@@ -64,8 +64,9 @@ namespace Models.Domain
        /// 
        /// </summary>
        /// //TODO method not optimized so far.
-        public void PairUp()
-        {
+       public void PairUp()
+       {
+           ClearNotPlayedGames();
             List<Player> playersToBePaired = (from p in Players
                                                                  where p.IsReadyToPlay == true
                                                                  orderby p.Points descending 
@@ -77,6 +78,11 @@ namespace Models.Domain
                Games.Add(game);
            }
            
+        }
+
+        private void ClearNotPlayedGames()
+        {
+           Games.RemoveAll(game => game.Result.Equals((int) Game.ResultEnum.NotPlayed));
         }
 
         public void PairUp(Collection<Game> pairings, List<Player> playersToBePaired)

@@ -33,24 +33,32 @@ namespace Models.Domain
             get { return _result; } 
             set 
             {
-                Log.Debug("Setting the result for: "+WhitePlayer.FirstName+" and "+ BlackPlayer.FirstName);
-                //Means it's not the first time the result has been set, so we must remove the current result before adding the new one.
-                if(!IsInProgress)
+                if(value.Equals((int) ResultEnum.NotPlayed))
                 {
-                    RemovePointsFromPlayers((int)_result);
+                    RemovePointsFromPlayers((int) _result);
+                    CancelGame();
                 }
-                if(IsInProgress)
+                if (!value.Equals((int)ResultEnum.NotPlayed))
                 {
-                    WhitePlayer.GamesPlayed++;
-                    BlackPlayer.GamesPlayed++;
+                    Log.Debug("Setting the result for: " + WhitePlayer.FirstName + " and " + BlackPlayer.FirstName);
+                    //Means it's not the first time the result has been set, so we must remove the current result before adding the new one.
+                    if (!IsInProgress)
+                    {
+                        RemovePointsFromPlayers((int)_result);
+                    }
+                    if (IsInProgress && !(value.Equals((int)ResultEnum.NotPlayed) || value.Equals((int)ResultEnum.Default)))
+                    {
+                        WhitePlayer.GamesPlayed++;
+                        BlackPlayer.GamesPlayed++;
+                        
+                    }
+                    AddPointsToPlayers((int)value);
                 }
-                
-                AddPointsToPlayers((int) value);
-                
+                WhitePlayer.IsReadyToPlay = false;
+                BlackPlayer.IsReadyToPlay = false;
                 _result = value;
                 IsInProgress = false;
                 DateOfResult = DateTime.Now;
-               
             }
         }
 
@@ -72,8 +80,8 @@ namespace Models.Domain
             //When a new game has been created, we set it immediatly to 'IsInProgress'
             IsInProgress = true;
             WhitePlayer.Games.Add(this);
-            WhitePlayer.WhiteBlackBalance =+ 1;
-            BlackPlayer.WhiteBlackBalance = -1;
+            WhitePlayer.WhiteBlackBalance++;
+            BlackPlayer.WhiteBlackBalance--;
             BlackPlayer.Games.Add(this);
             
         }
@@ -103,6 +111,17 @@ namespace Models.Domain
                     break;
             }
         }
+
+        private void CancelGame()
+        {
+            BlackPlayer.GamesPlayed = -1;
+            WhitePlayer.GamesPlayed = -1;
+            WhitePlayer.WhiteBlackBalance--;
+            BlackPlayer.WhiteBlackBalance++;
+            WhitePlayer.Games.Remove(this);
+            BlackPlayer.Games.Remove(this);
+
+        }
         /// <summary>
         /// This method adds points to the players of this game.
         /// The general rules are:
@@ -130,7 +149,6 @@ namespace Models.Domain
                     BlackPlayer.Points = +1;
                     Log.Debug("Added 1 point for: " + BlackPlayer.FirstName);
                     break;
-
             }
         }
 

@@ -58,7 +58,18 @@ namespace Models.Domain
             set { _lastName = value.Trim(); }
         }
 
-        public int GamesPlayed { get; set; }
+        private int _gamesPlayed;
+        public int GamesPlayed
+        {
+            get { return _gamesPlayed; }
+            set
+            {
+                if (_gamesPlayed + value >= 0)
+                {
+                    _gamesPlayed += value;
+                }
+            }
+        }
 
         //Should be moved to viewModel
         public string FullName

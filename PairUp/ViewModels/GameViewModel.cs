@@ -131,7 +131,7 @@ namespace PairUp.ViewModels
 
         private string ModelResultToGui(double result)
         {
-            if (result.Equals((int)Game.ResultEnum.Draw))
+            if (result.Equals((int) Game.ResultEnum.Draw))
             {
                 return "½-½";
             }

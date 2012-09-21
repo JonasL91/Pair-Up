@@ -173,21 +173,7 @@ namespace ModelsTest
             Assert.Inconclusive("Verify the correctness of this test method.");
         }
 
-        /// <summary>
-        ///A test for DoesPlayerHasNames
-        ///</summary>
-        [TestMethod()]
-        [DeploymentItem("PairUpModels.dll")]
-        public void DoesPlayerHasNamesTest()
-        {
-            Tournament_Accessor target = new Tournament_Accessor(); // TODO: Initialize to an appropriate value
-            Player player = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
-            bool actual;
-            actual = target.DoesPlayerHasNames(player);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
-        }
+      
 
         /// <summary>
         ///A test for PairUp
@@ -200,20 +186,7 @@ namespace ModelsTest
             Assert.Inconclusive("A method that does not return a value cannot be verified.");
         }
 
-        /// <summary>
-        ///A test for Games
-        ///</summary>
-        [TestMethod()]
-        public void GamesTest()
-        {
-            Tournament target = new Tournament(); // TODO: Initialize to an appropriate value
-            Collection<Game> expected = null; // TODO: Initialize to an appropriate value
-            Collection<Game> actual;
-            target.Games = expected;
-            actual = target.Games;
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
-        }
+      
 
         /// <summary>
         ///A test for Name
