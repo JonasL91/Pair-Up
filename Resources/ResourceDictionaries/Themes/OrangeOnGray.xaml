@@ -6,6 +6,10 @@
         #9FB4CC
     </SolidColorBrush>
     
+    <SolidColorBrush x:Key="BorderColor">
+        #FFF8E3
+    </SolidColorBrush>
+    
     <SolidColorBrush x:Key="ListViewBackground">
         #FFF8E3
     </SolidColorBrush>
@@ -14,10 +18,35 @@
         #FFF8E3
     </SolidColorBrush>
 
-    <SolidColorBrush x:Key="TextColor">
-        #CCCC9F 
+    <SolidColorBrush x:Key="GroupBoxTitleColor">
+        #FFFFFF
     </SolidColorBrush>
-<!--
+
+    <SolidColorBrush x:Key="TextColor">
+        #33332D 
+    </SolidColorBrush>
+
+    <SolidColorBrush x:Key="MenuBackground">
+        #FFF8E3
+    </SolidColorBrush>
+    
+    <SolidColorBrush x:Key="TableHeader">
+        #CCCC9F
+    </SolidColorBrush>
+
+    <SolidColorBrush x:Key="ButtonBackground">
+        #33332D
+    </SolidColorBrush>
+
+    <SolidColorBrush x:Key="ButtonBorder">
+        #33332D
+    </SolidColorBrush>
+
+    <SolidColorBrush x:Key="ButtonForeground">
+        #DB4105
+    </SolidColorBrush>
+
+    <!--
     <Color x:Key="">
         #DB4105
     </Color>

@@ -8,13 +8,7 @@
 
     </ResourceDictionary.MergedDictionaries>
     
-    <Style x:Key="BaseDataGrid" TargetType="{x:Type DataGrid}">
-        <Setter Property="Background" Value="{DynamicResource DataGridBackground}"/>
-    </Style>
-    <Style x:Key="BaseDataGridColumnHeader" TargetType="{x:Type DataGridColumnHeader}">
+    <Style x:Key="BaseGridViewColumnHeader" TargetType="{x:Type GridViewColumnHeader}">
         <Setter Property="Background" Value="{DynamicResource TableHeader}"/>
-    </Style>
-    <Style TargetType="{x:Type DataGridRow}">
-       <!-- <Setter Property="ValidationErrorTemplate" Value="{x:Null}"/>-->
     </Style>
 </ResourceDictionary>

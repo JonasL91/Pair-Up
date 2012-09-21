@@ -4,5 +4,9 @@
         <ResourceDictionary Source="BaseControlStyles/BaseWindow.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/BaseDataGrid.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/BaseListView.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/BaseGroupBox.xaml" />
+        <ResourceDictionary Source="BaseControlStyles/BaseMenu.xaml" />
+        <ResourceDictionary Source="BaseControlStyles/BaseButton.xaml" />
+        <ResourceDictionary Source="BaseControlStyles/BaseGridView.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

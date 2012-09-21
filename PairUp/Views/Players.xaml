@@ -1,16 +1,17 @@
 ﻿<UserControl x:Class="PairUp.Views.Players"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <GroupBox Header="Ingeschreven spelers">
+    <GroupBox Style="{DynamicResource BaseGroupBox}" Header="Ingeschreven spelers">
         <DockPanel>
-            <DataGrid Style="{DynamicResource BaseDataGrid}" DockPanel.Dock="Top" ItemsSource="{Binding Players, Mode=TwoWay}"  AutoGenerateColumns="False" Name="PlayerDataGrid" CanUserAddRows="True">
+
+            <DataGrid Style="{DynamicResource BaseDataGrid}" ColumnHeaderStyle="{DynamicResource BaseDataGridColumnHeader}" DockPanel.Dock="Top" ItemsSource="{Binding Players, Mode=TwoWay}"  AutoGenerateColumns="False" Name="PlayerDataGrid" CanUserAddRows="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Voornaam" Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
                     <DataGridTextColumn Header="Achternaam" Binding="{Binding LastName,  UpdateSourceTrigger=PropertyChanged}"/>
                     <DataGridCheckBoxColumn Header="Klaar om te spelen" Binding="{Binding IsReadyToPlay, UpdateSourceTrigger=PropertyChanged}"  />
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Content="PairUp!"  DockPanel.Dock="Bottom" x:Name="PairUpButton" Command="{Binding PairUpCommand}"/>
+            
         </DockPanel>
         
         

@@ -5,12 +5,13 @@
 
 
         <DockPanel x:Name="LayoutRoot">
-
+            <Button Style="{DynamicResource BaseButton}" Content="PairUp!"
+                    Height="200" DockPanel.Dock="Bottom" x:Name="PairUpButton" Command="{Binding PairUpCommand}"/>
             <Views:MainMenu DockPanel.Dock="Top" />
             <Views:Players />
             <Views:Ranking />
             <Views:Games  />
-           
+            
         </DockPanel>
 
     </DataTemplate>
