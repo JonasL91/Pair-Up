@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <GroupBox Header="Ingeschreven spelers">
         <DockPanel>
-            <DataGrid Style="{DynamicResource DataGrid}" DockPanel.Dock="Top" ItemsSource="{Binding Players, Mode=TwoWay}"  AutoGenerateColumns="False" Name="PlayerDataGrid" CanUserAddRows="True">
+            <DataGrid Style="{DynamicResource BaseDataGrid}" DockPanel.Dock="Top" ItemsSource="{Binding Players, Mode=TwoWay}"  AutoGenerateColumns="False" Name="PlayerDataGrid" CanUserAddRows="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Voornaam" Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
                     <DataGridTextColumn Header="Achternaam" Binding="{Binding LastName,  UpdateSourceTrigger=PropertyChanged}"/>

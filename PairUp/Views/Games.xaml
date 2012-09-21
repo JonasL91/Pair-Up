@@ -6,9 +6,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <GroupBox Header="Matchen">
-        <ListView ItemsSource="{Binding Games}">
+        <ListView Style="{DynamicResource BaseListView}" ItemsSource="{Binding Games}" >
             <ListView.View>
-                <GridView>
+                <GridView >
                     <GridViewColumn Header="Wit">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>

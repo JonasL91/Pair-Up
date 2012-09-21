@@ -7,12 +7,9 @@
         <ResourceDictionary Source="..\CurrentTheme\CurrentTheme.xaml"/>
 
     </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="BaseListView" TargetType="{x:Type ListView}">
+        <Setter Property="Background" Value="{DynamicResource ListViewBackground}"/>
+    </Style>
     
-    <Style x:Key="BaseWindow" TargetType="{x:Type Window}">
-		<Setter Property="Width" Value="1024"/>
-		<Setter Property="Height" Value="768"/>
-        <Setter Property="Title" Value="PairUp"/>
-        <Setter Property="WindowState" Value="Normal"/>
-        <Setter Property="Background" Value="{DynamicResource WindowBackground}"/>
-	</Style>
 </ResourceDictionary>

@@ -3,6 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Style="{StaticResource BaseWindow}">
     <Grid>
-            
+    	<Button Content="Button text" Margin="93,135,38,94">
+    		<Button.Background>
+    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    				<GradientStop Color="White" Offset="0"/>
+    				<GradientStop Color="#FFD47640" Offset="0.9"/>
+    			</LinearGradientBrush>
+    		</Button.Background>
+    	</Button>
     </Grid>
 </Window>

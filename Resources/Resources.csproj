@@ -54,9 +54,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ResourceDictionaries\BaseControlStyles\DataGrid.xaml">
+    <Page Include="ResourceDictionaries\BaseControlStyles\BaseDataGrid.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDictionaries\BaseControlStyles\BaseListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\Themes\OrangeOnGray.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ResourceDictionaries\ResourceLibrary.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -66,9 +74,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResourceDictionaries\CurrentTheme\CurrentTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ResourceDictionaries\Brushes\" />
     <Folder Include="ResourceDictionaries\CustomControlStyles\" />
     <Folder Include="ResourceDictionaries\NamedStyles\" />
   </ItemGroup>
