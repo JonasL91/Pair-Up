@@ -3,7 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Views="clr-namespace:PairUp.Views"
 	x:Class="PairUp.MainScreen"
 	Style="{DynamicResource BaseWindow}"
-    WindowStartupLocation="CenterScreen">
+    WindowState="Maximized">
     <DockPanel>
         <ContentControl Content="{Binding CurrentView}" />
     </DockPanel>

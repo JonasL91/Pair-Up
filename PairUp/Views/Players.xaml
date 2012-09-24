@@ -5,10 +5,11 @@
         <DockPanel>
 
             <DataGrid Style="{DynamicResource BaseDataGrid}" ColumnHeaderStyle="{DynamicResource BaseDataGridColumnHeader}" DockPanel.Dock="Top" ItemsSource="{Binding Players, Mode=TwoWay}"  AutoGenerateColumns="False" Name="PlayerDataGrid" CanUserAddRows="True">
+               
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Voornaam" Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
-                    <DataGridTextColumn Header="Achternaam" Binding="{Binding LastName,  UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridCheckBoxColumn Header="Klaar om te spelen" Binding="{Binding IsReadyToPlay, UpdateSourceTrigger=PropertyChanged}"  />
+                    <DataGridTextColumn Header="Voornaam" Width="*" Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
+                    <DataGridTextColumn Header="Achternaam" Width="*" Binding="{Binding LastName,  UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridCheckBoxColumn Header="Klaar om te spelen" Width="*" Binding="{Binding IsReadyToPlay, UpdateSourceTrigger=PropertyChanged}"  />
                 </DataGrid.Columns>
             </DataGrid>
             

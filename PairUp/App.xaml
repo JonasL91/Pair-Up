@@ -7,13 +7,6 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://Application:,,,/PairUpResources;component/ResourceDictionaries/ResourceLibrary.xaml"/>
                 <ResourceDictionary Source="Themes/DataTemplates.xaml"/>
-                <ResourceDictionary Source="/PairUpResources;component/ResourceDictionaries/Brushes/Colors.xaml"/>
-                <ResourceDictionary Source="/PairUpResources;component/ResourceDictionaries/BaseControlStyles/BaseUserControl.xaml"/>
-                <ResourceDictionary Source="/PairUpResources;component/ResourceDictionaries/Themes/OrangeOnGray.xaml"/>
-                <ResourceDictionary Source="/PairUpResources;component/ResourceDictionaries/CurrentTheme/CurrentTheme.xaml"/>
-                <ResourceDictionary Source="/PairUpResources;component/ResourceDictionaries/BaseControlStyles/BaseDataGrid.xaml"/>
-                <ResourceDictionary Source="/PairUpResources;component/ResourceDictionaries/BaseControlStyles/BaseListView.xaml"/>
-                <ResourceDictionary Source="/PairUpResources;component/ResourceDictionaries/BaseControlStyles/BaseGroupBox.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

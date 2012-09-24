@@ -3,48 +3,41 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" >
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Behaviours="clr-namespace:PairUp.Behaviours" mc:Ignorable="d">
     <GroupBox Style="{DynamicResource BaseGroupBox}" Header="Rangschikking">
-        <ListView Style="{DynamicResource BaseListView}"  ItemsSource="{Binding PlayersRanked}">
+        <ListView Style="{DynamicResource BaseListView}"  ItemsSource="{Binding PlayersRanked}" HorizontalAlignment="Stretch"
+                  Behaviours:GridViewColumnResize.Enabled="False">
             <ListView.View>
                 <GridView ColumnHeaderContainerStyle="{DynamicResource BaseGridViewColumnHeader}">
-                    <GridViewColumn Header="Voornaam" >
+                    <GridViewColumn Header="Voornaam"  Behaviours:GridViewColumnResize.Width="*1">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding FirstName}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Achternaam">
+                    <GridViewColumn Header="Achternaam" Behaviours:GridViewColumnResize.Width="*1">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding LastName}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Punten">
+                    <GridViewColumn Header="Punten" Behaviours:GridViewColumnResize.Width="*1">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Points}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Matchen gespeeld">
+                    <GridViewColumn Header="Matchen gespeeld" Behaviours:GridViewColumnResize.Width="*1">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding GamesPlayed}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Klaar om te spelen">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding IsReadyToPlay}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-
                 </GridView>
             </ListView.View>
         </ListView>

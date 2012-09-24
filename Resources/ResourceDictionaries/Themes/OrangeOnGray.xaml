@@ -35,7 +35,7 @@
     </SolidColorBrush>
 
     <SolidColorBrush x:Key="ButtonBackground">
-        #33332D
+        #DB4105
     </SolidColorBrush>
 
     <SolidColorBrush x:Key="ButtonBorder">
@@ -43,7 +43,7 @@
     </SolidColorBrush>
 
     <SolidColorBrush x:Key="ButtonForeground">
-        #DB4105
+        black
     </SolidColorBrush>
 
     <!--

@@ -5,6 +5,7 @@
  >
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="..\CurrentTheme\CurrentTheme.xaml"/>
+        <ResourceDictionary Source="..\Dimensions\FontDimensions.xaml"/>
 
     </ResourceDictionary.MergedDictionaries>
     
@@ -13,4 +14,11 @@
         <Setter Property="Foreground" Value="{DynamicResource ButtonForeground}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorder}"/>
     </Style>
+    <Style x:Key="BaseButtonMedium" BasedOn="{StaticResource BaseButton}" TargetType="{x:Type Button}" >
+        <Setter Property="TextElement.FontSize" Value="{DynamicResource LargeFontSize}" />
+    </Style>
+    <Style x:Key="BaseButtonLarge" BasedOn="{StaticResource BaseButton}" TargetType="{x:Type Button}">
+        <Setter Property="TextElement.FontSize" Value="{DynamicResource ExtraLargeFontSize}" />
+    </Style>
+    
 </ResourceDictionary>
