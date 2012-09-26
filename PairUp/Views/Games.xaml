@@ -23,7 +23,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Uitslag"  >
+                    <GridViewColumn Header="Uitslag" Width="100" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <ComboBox Text="" IsEditable="True" IsReadOnly="True" SelectedValue="{Binding Result}" SelectedValuePath="Content">

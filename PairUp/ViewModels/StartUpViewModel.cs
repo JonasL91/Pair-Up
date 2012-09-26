@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using GalaSoft.MvvmLight;
@@ -59,7 +60,7 @@ namespace PairUp.ViewModels
             _recentFileRepository = new RecentFileRepository();
             var temp = _recentFileRepository.GetRecentFiles();
             RecentFiles = new ObservableCollection<RecentFileViewModel>();
-            foreach (RecentFile f in temp)
+            foreach (FileInfo f in temp)
             {
                 var v = new RecentFileViewModel(f);
                 RecentFiles.Add(v);
@@ -78,7 +79,7 @@ namespace PairUp.ViewModels
             TournamentRepository tournamentRepository = new TournamentRepository();
             //TODO better approach possible? Binding directly to the filepath. Or does the selected item needs to be a whole "RecentFileViewModel".
             //For example if we want to show information or w/e when selected one... (just an example)
-            Tournament tournament = tournamentRepository.LoadTournamentFromXML(SelectedFile.RecentFile.Filepath);
+            Tournament tournament = tournamentRepository.LoadTournamentFromXML(SelectedFile.RecentFile.FullName);
             var tournamentViewModel = new TournamentViewModel(tournament);
             Messenger.Default.Send(new NotificationMessage<ViewModelBase>(this, tournamentViewModel, "CurrentContent"));
         }

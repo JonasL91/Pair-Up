@@ -8,5 +8,6 @@
         <ResourceDictionary Source="BaseControlStyles/BaseMenu.xaml" />
         <ResourceDictionary Source="BaseControlStyles/BaseButton.xaml" />
         <ResourceDictionary Source="BaseControlStyles/BaseGridView.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/BaseTextBlock.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

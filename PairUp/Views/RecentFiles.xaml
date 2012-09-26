@@ -15,10 +15,21 @@
             <ListView Style="{DynamicResource BaseListView}" ItemsSource="{Binding RecentFiles}" SelectedItem="{Binding SelectedFile}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Name}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding Name}" Grid.Column="0" />
+                            <TextBlock Text="{Binding LastTimeEdited}" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                            <TextBlock Style="{DynamicResource BaseTextBlockItalic}" Text="{Binding Folder}" Grid.Row="1" Margin="0,0,0,5" />
+                        </Grid> 
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
         </GroupBox>
         <Button Style="{DynamicResource BaseButtonMedium}" Grid.Row="1" Grid.Column="0" Content="Nieuw toernooi starten" Command="{Binding StartNewTournamentCommand}" />

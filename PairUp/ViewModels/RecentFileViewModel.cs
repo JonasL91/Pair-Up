@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using GalaSoft.MvvmLight;
@@ -14,9 +15,9 @@ namespace PairUp.ViewModels
     {
         #region Properties
        
-        private RecentFile _recentFile;
+        private FileInfo _recentFile;
 
-        public RecentFile RecentFile
+        public FileInfo RecentFile
         {
             get { return _recentFile; }
             set
@@ -31,14 +32,24 @@ namespace PairUp.ViewModels
 
         public string Name
         {
-            get { return RecentFile.Filepath; }
+            get { return RecentFile.Name; }
+        }
+
+        public string LastTimeEdited
+        {
+            get { return RecentFile.LastWriteTime.ToShortDateString(); }
+        }
+
+        public string Folder
+        {
+            get { return RecentFile.DirectoryName; }
         }
 
 
         #endregion
 
         #region Constructors
-        public RecentFileViewModel(RecentFile recentFile)
+        public RecentFileViewModel(FileInfo recentFile)
         {
             this.RecentFile = recentFile;
         }

@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Models.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ProductName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PairUp</Value>
+    </Setting>
+    <Setting Name="CompanyName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PairUp</Value>
+    </Setting>
+    <Setting Name="TournamentMRUList" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TournamentMRUList</Value>
+    </Setting>
+    <Setting Name="MaxEntriesRencentTournaments" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
