@@ -135,9 +135,6 @@
     <Compile Include="Views\RecentFiles.xaml.cs">
       <DependentUpon>RecentFiles.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Tournament.xaml.cs">
-      <DependentUpon>Tournament.xaml</DependentUpon>
-    </Compile>
     <Page Include="Themes\DataTemplates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,10 +160,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\RecentFiles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Tournament.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

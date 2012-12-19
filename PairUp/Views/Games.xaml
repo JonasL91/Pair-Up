@@ -35,7 +35,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Tijd">
+                    <GridViewColumn Header="Tijd" Width="50">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding DateOfResult}"/>

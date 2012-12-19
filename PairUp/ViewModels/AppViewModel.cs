@@ -10,7 +10,8 @@ namespace PairUp.ViewModels
 {
     public class AppViewModel : ViewModelBase
     {
-        private TournamentViewModel tournamentViewModel;
+        public TournamentViewModel TournamentViewModel { get; set; }
+        public StartUpViewModel StartUpViewModel { get; set; }
         private ViewModelBase _currentView;
         public ViewModelBase CurrentView
         {
@@ -33,20 +34,26 @@ namespace PairUp.ViewModels
 
         public AppViewModel()
         {
-            StartUpViewModel startUpViewModel = new StartUpViewModel();
-            CurrentView = startUpViewModel;
+            StartUpViewModel = new StartUpViewModel();
+            CurrentView = StartUpViewModel;
             ViewTournamentCommand = new RelayCommand(ShowTournamentView);
             Messenger.Default.Register<NotificationMessage<ViewModelBase>>(this, NotificationMessageReceived);
         }
 
         public void ShowTournamentView()
         {
-            CurrentView = tournamentViewModel;
+            CurrentView = TournamentViewModel;
         }
 
         private void NotificationMessageReceived(NotificationMessage<ViewModelBase> currentView)
         {
             CurrentView = currentView.Content;
+            if(currentView.Notification.Equals("TournamentViewModel"))
+            {
+                TournamentViewModel = (TournamentViewModel) currentView.Content;
+            }
+            
+            
         }
     }
 }

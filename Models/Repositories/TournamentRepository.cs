@@ -6,11 +6,15 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 using Models.Domain;
+using log4net;
 
 namespace Models.Repositories
 {
     public class TournamentRepository
     {
+        #region Static Fields
+        private static readonly ILog Log = LogManager.GetLogger(typeof(TournamentRepository));
+        #endregion
         private readonly XmlSerializer serializer;
 
 
@@ -22,7 +26,8 @@ namespace Models.Repositories
         public Tournament LoadTournamentFromXML(string path)
         {
             var reader = new StreamReader(path);
-            Tournament tournament = (Tournament) serializer.Deserialize(reader);
+           
+            var tournament = (Tournament)serializer.Deserialize(reader);
             reader.Close();
             return tournament;
            

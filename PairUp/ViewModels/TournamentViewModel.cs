@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Xml.Serialization;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -27,6 +28,8 @@ namespace PairUp.ViewModels
 
         #region Properties
 
+        private bool _hasBeenSavedAs;
+        private string _path;
         public Tournament CurrentTournament;
         private ObservableCollection<PlayerViewModel> _players;
         public ObservableCollection<PlayerViewModel> Players
@@ -78,7 +81,6 @@ namespace PairUp.ViewModels
         }
 
         public RelayCommand PairUpCommand { get; set; }
-        public RelayCommand SaveAsCommand { get; set; }
         public RelayCommand SaveCommand { get; set; }
         //public bool IsSaved { get; set; }
 
@@ -108,6 +110,20 @@ namespace PairUp.ViewModels
             CurrentTournament = tournament;
             Players = new ObservableCollection<PlayerViewModel>();
             Games = new ObservableCollection<GameViewModel>();
+            Messenger.Default.Register<NotificationMessage>(this, NotificationMessageReceived);
+            _hasBeenSavedAs = true;
+            InitTournament();
+            InitCommands();
+        }
+
+        public TournamentViewModel(Tournament tournament, string path)
+        {
+            CurrentTournament = tournament;
+            _path = path;
+            Players = new ObservableCollection<PlayerViewModel>();
+            Games = new ObservableCollection<GameViewModel>();
+            Messenger.Default.Register<NotificationMessage>(this, NotificationMessageReceived);
+            _hasBeenSavedAs = true;
             InitTournament();
             InitCommands();
         }
@@ -125,6 +141,13 @@ namespace PairUp.ViewModels
             {
                 PlayerViewModel playerViewModel = new PlayerViewModel(player);
                 Players.Add(playerViewModel);
+                foreach(Game game in CurrentTournament.Games)
+                {
+                    if(game.BlackPlayer.Equals(player)||game.WhitePlayer.Equals(player))
+                    {
+                        player.Games.Add(game);
+                    }
+                }
             }
         }
 
@@ -133,7 +156,7 @@ namespace PairUp.ViewModels
         private void InitCommands()
         {
             PairUpCommand = new RelayCommand(PairUp, ()=>CanPairUp());
-            SaveAsCommand = new RelayCommand(() => SaveAs());
+            SaveCommand = new RelayCommand(() => Save());
         }
 
         private bool CanSaveAs()
@@ -141,28 +164,41 @@ namespace PairUp.ViewModels
             throw new NotImplementedException();
         }
 
-        private void SaveAs()
+        private void Save()
         {
-            var saveFileDialog = new SaveFileDialog
-                                     {
-                                         FileName = "New Tournament",  // Default file name
-                                         DefaultExt = ".xml", // Default file extension
-                                         Filter = "XML documents (.xml)|*.xml" // Filter files by extension
-                                     };
+            Log.Debug(_hasBeenSavedAs);
+            if(!_hasBeenSavedAs)
+            {
+                var saveFileDialog = new SaveFileDialog
+                {
+                    FileName = "New Tournament",  // Default file name
+                    DefaultExt = ".xml", // Default file extension
+                    Filter = "XML documents (.xml)|*.xml" // Filter files by extension
+                };
+                // Show save file dialog box
+                Nullable<bool> result = saveFileDialog.ShowDialog();
+
+                // Process save file dialog box results
+                if (result == true)
+                {
+                    // Save document
+                    string filename = saveFileDialog.FileName;
+                    Save(filename);
+                    _path = filename;
+                    _hasBeenSavedAs = true;
+                    MessageBox.Show("Tornooi succesvol opgeslaan", "Opslaan Tornooi", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            else
+            {
+                Save(_path);
+            }
+           
            
             
             
 
-            // Show save file dialog box
-            Nullable<bool> result = saveFileDialog.ShowDialog();
-
-            // Process save file dialog box results
-            if (result == true)
-            {
-                // Save document
-                string filename = saveFileDialog.FileName;
-                Save(filename);
-            }
+           
         }
 
         #region Methods

@@ -22,7 +22,7 @@ namespace PairUp
 	public partial class MainScreen : Window
 	{
         #region Static fields
-        private static readonly ILog Log = LogManager.GetLogger(typeof(TournamentViewModel));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(MainScreen));
         #endregion
 	    public TournamentViewModel TournamentViewModel { get; set; }
         public MainScreen()

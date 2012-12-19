@@ -48,9 +48,8 @@ namespace Models.Domain
                     }
                     if (IsInProgress && !(value.Equals((int)ResultEnum.NotPlayed) || value.Equals((int)ResultEnum.Default)))
                     {
-                        WhitePlayer.GamesPlayed++;
-                        BlackPlayer.GamesPlayed++;
-                        
+                        WhitePlayer.GamesPlayed =+ 1;
+                        BlackPlayer.GamesPlayed =+ 1;                     
                     }
                     AddPointsToPlayers((int)value);
                 }

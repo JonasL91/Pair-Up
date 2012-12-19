@@ -4,6 +4,14 @@
 	x:Class="PairUp.MainScreen"
 	Style="{DynamicResource BaseWindow}"
     WindowState="Maximized">
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Control" Key="N" Command="{Binding Path=DataContext.StartUpViewModel.StartNewTournamentCommand, 
+                RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
+        <KeyBinding Modifiers="Control" Key="O" Command="{Binding Path=DataContext.StartUpViewModel.LoadTournamentCommand, 
+                RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
+        <KeyBinding Modifiers="Control" Key="S" Command="{Binding Path=CurrentView.SaveCommand}"/>
+        
+    </Window.InputBindings>
     <DockPanel>
         <ContentControl Content="{Binding CurrentView}" />
     </DockPanel>
